@@ -19,13 +19,15 @@ let mb
 let gb
 let tb
 
-/*--------- app's logic ---------*/
+/*--------- functions ---------*/
 
 function init() {
   convert()
 }
 
 init()
+
+
 
 function convert() {
   let tracks = (document.getElementById("tracks").value).replace(/,/g, '')
