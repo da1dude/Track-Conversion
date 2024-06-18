@@ -36,6 +36,15 @@ main {
   margin-bottom: 20px;
 }
 
+#tracks {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+
+  border-radius: 5px;
+}
+
 #values {
   width: 100%;
   padding: 10px;

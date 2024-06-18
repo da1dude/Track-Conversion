@@ -47,4 +47,5 @@ function convert() {
 }
 
 /*------ event listeners ------*/
-document.querySelector('#convert').addEventListener('click', convert)
+document.querySelector('#tracks').addEventListener('input', convert)
+
