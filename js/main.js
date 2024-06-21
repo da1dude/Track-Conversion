@@ -1,5 +1,5 @@
 /*--------- app's constant (variables) ---------*/
-const CYLBYTE = 839940
+const CYLBYTE = 849960
 const BYTECON  = 1024
 
 /*------ cached element references ------*/
