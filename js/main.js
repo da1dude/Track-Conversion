@@ -27,8 +27,6 @@ function init() {
 
 init()
 
-
-
 function convert() {
   let tracks = (document.getElementById("tracks").value).replace(/,/g, '')
   console.log(tracks)
@@ -38,12 +36,12 @@ function convert() {
   mb = kb / BYTECON
   gb = mb / BYTECON
   tb = gb / BYTECON
-  CLYel.innerText= cly.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' cylinders'
-  BYTESel.innerText= bytes.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' bytes'
-  KBel.innerText= kb.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' kb'
-  MBel.innerText= mb.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' mb'
-  GBel.innerText= gb.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' gb'
-  TBel.innerText= tb.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' tb'
+  CLYel.innerText= cly.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' cylinders'
+  BYTESel.innerText= bytes.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' bytes'
+  KBel.innerText= kb.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' kb'
+  MBel.innerText= mb.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' mb'
+  GBel.innerText= gb.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' gb'
+  TBel.innerText= tb.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' tb'
 }
 
 /*------ event listeners ------*/
