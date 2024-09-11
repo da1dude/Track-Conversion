@@ -1,7 +1,7 @@
 /*--------- app's constant (variables) ---------*/
 const CYLBYTE = 849960
 const TRKBYTE = 56664 
-const BYTECON  = 1024
+const BYTECON  = 1000
 
 /*------ cached element references ------*/
 const CLYel = document.getElementById('CLYel')
