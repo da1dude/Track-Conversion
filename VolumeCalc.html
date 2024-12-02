@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/mainvc.css">
+    <script defer src="js/calc.js"></script>
+    <title>Volume Calculator</title>
+</head>
+<body>
+  <a href="TrackConvert.html" class="mod" target="_blank">
+    TRK CYL Converter
+  </a>
+    <div>
+        <header>
+            <h1>SG Calculator</h1>
+        </header>
+        <h2>SG Details</h2>
+        <section class="values">
+          <table style="width:100%">
+            <tr>
+              <td>Total Space MB</td>
+              <td>
+                <input type="text" id="totalSpace" placeholder="total space mb">
+              </td>
+            </tr>
+            <tr>
+              <td>Free Space MB</td>
+              <td>
+                <input type="text" id="freeSpace" placeholder="free space mb">
+              </td>
+            </tr>
+            <tr>
+              <td>Percent Free</td>
+              <td id="percentFree"></td>
+            </tr>
+            <tr>
+              <td>Percent Used</td>
+              <td id="percentUsed"></td>
+            </tr>
+            <tr>
+              <td>Space Free GB</td>
+              <td id="spaceFreeGB"></td>
+            </tr>
+            <tr>
+              <td>Space Used GB</td>
+              <td id="spaceUsedGB"></td>
+            </tr>
+            <tr>
+              <td>Total Space GB</td>
+              <td id="totalSpaceGB"></td>
+            </tr>
+            <tr>
+              <td>Space Free CYL</td>
+              <td id="spaceFreeCYL"></td>
+            </tr>
+            <tr>
+              <td>Space Used CYL</td>
+              <td id="spaceUsedCYL"></td>
+            </tr>
+            <tr>
+              <td>Total Space CYL</td>
+              <td id="totalSpaceCYL"></td>
+            </tr>
+          </table>
+          <!-- <p id="modBox"></p> -->
+        </section>
+        <h2>SG Allocation</h2>
+        <section class="values">
+          <table style="width:100%">
+            <tr>
+              <td>Volumes to Add</td>
+              <td>
+                <input type="text" id="volumeAdds" placeholder="# Volumes to be added">
+              </td>
+            </tr>
+            <tr>
+              <td>Mod Type</td>
+              <td id="modBox"></td>
+            </tr>
+          </table>
+        </section>
+        <h3>Mod Type Selection</h3>
+        <section>
+          <button class="mod" id="mod09Btn" value="8.51405">09</button>  
+          <button class="mod" id="mod27Btn" value="27.84469">27</button>  
+          <button class="mod" id="mod54Btn" value="55.68928">54</button>  
+        </section>
+        <section class="values">
+          <table style="width:100%">
+            <tr>
+              <td>New Percent Free</td>
+              <td id="percentFreeNew"></td>
+            </tr>
+            <tr>
+              <td>New Percent Used</td>
+              <td id="percentUsedNew"></td>
+            </tr>
+            <tr>
+              <td>New Space Free GB</td>
+              <td id="totalFreeSpaceNew"></td>
+            </tr>
+            <tr>
+              <td>Space Used GB</td>
+              <td id="totalUsedSpaceNew"></td>
+            </tr>
+            <tr>
+              <td>New Space Free CYL</td>
+              <td id="spaceFreeCYLNew"></td>
+            </tr>
+            <tr>
+              <td>Space Used CYL</td>
+              <td id="spaceUsedCYLNew"></td>
+            </tr>
+            <tr>
+              <td>New Total Space CYL</td>
+              <td id="totalSpaceCYLNew"></td>
+            </tr> 
+          </table>
+        </section>
+    </div>
+</body>
+</html>
