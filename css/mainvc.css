@@ -4,47 +4,22 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%; /* Allow content to take full height */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-div {
-  width: 400px;
-  height: 1100px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
-}
-
-td {
-  border: 1px solid #e0e0e0;
-  border-collapse: collapse;
-  padding: 10px;
-}
-
-.values {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  overflow-y: auto; /* Allow vertical scroll */
 }
 
 a.mod {
-  position: absolute; /* Absolute positioning to place it in top-left */
-  top: 10px; /* Distance from the top of the page */
-  left: 10px; /* Distance from the left of the page */
+  position: fixed;
+  top: 10px;
+  left: 10px;
   padding: 10px 20px;
   font-size: 18px;
   background-color: #007BFF;
@@ -57,63 +32,107 @@ a.mod {
 
 a.mod:hover {
   background-color: #0056b3;
-  transform: translateY(-2px); /* Hover effect: moves slightly up */
+  transform: translateY(-2px);
 }
 
 a.mod:active {
   background-color: #003366;
-  transform: translateY(0); /* Active effect: moves back to original position */
-}
-
-.mod {
-  align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1.25;
-  margin: 0;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
-}
-
-.mod:hover,
-.mod:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(0, 0, 0, 0.65);
-}
-
-.mod:hover {
-  transform: translateY(-1px);
-}
-
-.mod:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
 
-@media screen and (max-width: 900px) {
+.modType {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2, h3 {
+  text-align: center; /* Center the text inside the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
+  font-size: 24px; /* Adjust size for better visibility */
+}
+
+section {
+  text-align: center; /* Center the content within the section */
+  margin: 0 auto 20px; /* Center the section horizontally and add spacing below */
+  max-width: 80%; /* Limit the section width to prevent it from stretching too wide */
+}
+
+table {
+  width: 80%; /* Reduce the table width to 80% of the container or page */
+  max-width: 600px; /* Set a maximum width to prevent it from becoming too wide */
+  margin: 0 auto; /* Center the table horizontally */
+  border-collapse: collapse; /* Remove gaps between cells */
+  background-color: #fff; /* Optional: Set background color for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a modern look */
+  border-radius: 8px; /* Optional: Add rounded corners for a polished look */
+}
+
+td, th {
+  padding: 8px 12px; /* Add padding to table cells for spacing */
+  border: 1px solid #ccc; /* Add a border around each cell */
+  text-align: center; /* Center-align text in cells */
+}
+
+th {
+  background-color: #f7f7f7; /* Different background color for headers */
+  font-weight: bold; /* Make header text bold */
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+button.mod {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button.mod:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+button.mod:active {
+  background-color: #003366;
+  transform: translateY(0);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-height: 900px) {
   * {
-      font-size: 97%;
+    font-size: 96%;
+    button.mod {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+    a.mod {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
   }
 } 
