@@ -89,20 +89,20 @@ function sgAllocate() {
   console.log(volumeAdds)
 
   totalSpaceNew = (spaceFreeGB + spaceUsedGB) + (volumeAdds * modValue)
-  newTotalSpaceGBel.innerText = totalSpaceNew.toFixed(3)
+  newTotalSpaceGBel.innerText = totalSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalFreeSpaceNew = totalSpaceNew - spaceUsedGB
   console.log(totalSpaceNew.toFixed(3))
   percentFreeNew = (totalFreeSpaceNew / totalSpaceNew) * 100
   percentFreeNewel.innerText = percentFreeNew.toFixed(2) + '%'
   percentUsedNewel.innerText = (100 - percentFreeNew).toFixed(2) + '%'
-  totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3)
-  totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3)
+  totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceFreeCYLNew = totalFreeSpaceNew * 1176
-  spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3)
+  spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedCYLNew = spaceUsedGB * 1176
-  spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3)
+  spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYLNew = spaceFreeCYLNew + spaceUsedCYLNew
-  totalSpaceCYLNewel.innerText = totalSpaceCYLNew.toFixed(3)
+  totalSpaceCYLNewel.innerText = totalSpaceCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
 
@@ -116,15 +116,15 @@ function sgDetails() {
   percentUsed = 100 - percentFree
   percentUsedel.innerText= percentUsed.toFixed(2) + '%'
   spaceFreeGB = freeSpace / 1000
-  spaceFreeGBel.innerText= spaceFreeGB.toFixed(3)
+  spaceFreeGBel.innerText= spaceFreeGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceFreeCYL = spaceFreeGB * 1176
-  spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3)
+  spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedGB = (totalSpace - freeSpace) / 1000
-  spaceUsedGBel.innerText= spaceUsedGB.toFixed(3)
+  spaceUsedGBel.innerText= spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedCYL = spaceUsedGB * 1176
-  spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3)
+  spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYL = spaceFreeCYL + spaceUsedCYL
-  totalSpaceCYLel.innerText= totalSpaceCYL.toFixed(3)
+  totalSpaceCYLel.innerText= totalSpaceCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
 
 
