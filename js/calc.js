@@ -3,6 +3,7 @@ const mod03 = 2.83802
 const mod09 = 8.51405
 const mod27 = 27.84469
 const mod54 = 55.68928
+const gbSize = 1024
 
 /*------ cached element references ------*/
 const modBoxel = document.getElementById('modBox')
@@ -110,16 +111,16 @@ function sgDetails() {
   totalSpace = document.getElementById('totalSpace').value
   freeSpace = document.getElementById('freeSpace').value
   percentFree = (freeSpace / totalSpace) * 100
-  totalSpaceGB = totalSpace / 1000
+  totalSpaceGB = totalSpace / gbSize
   totalSpaceGBel.innerText= totalSpaceGB.toFixed(3)
   percentFreeel.innerText= percentFree.toFixed(2) + '%'
   percentUsed = 100 - percentFree
   percentUsedel.innerText= percentUsed.toFixed(2) + '%'
-  spaceFreeGB = freeSpace / 1000
+  spaceFreeGB = freeSpace / gbSize
   spaceFreeGBel.innerText= spaceFreeGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceFreeCYL = spaceFreeGB * 1176
   spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedGB = (totalSpace - freeSpace) / 1000
+  spaceUsedGB = (totalSpace - freeSpace) / gbSize
   spaceUsedGBel.innerText= spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedCYL = spaceUsedGB * 1176
   spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
