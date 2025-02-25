@@ -1,4 +1,5 @@
 /*--------- app's constant (variables) ---------*/
+const mod03 = 2.83802
 const mod09 = 8.51405
 const mod27 = 27.84469
 const mod54 = 55.68928
@@ -20,6 +21,7 @@ const percentUsedel = document.getElementById('percentUsed')
 const spaceFreeCYLNewel = document.getElementById('spaceFreeCYLNew')
 const spaceUsedCYLNewel = document.getElementById('spaceUsedCYLNew')
 const totalSpaceCYLNewel = document.getElementById('totalSpaceCYLNew')
+const newTotalSpaceGBel = document.getElementById('totalSpaceGBNew')
 
 
 /*--------- app's state (variables) ---------*/
@@ -69,7 +71,9 @@ function sgAllocate() {
   // Ensure modValue is correctly set depending on the button clicked
   const modBtnValue = this.id;  // Get the ID of the clicked button (e.g., mod09Btn, mod27Btn, etc.)
 
-  if (modBtnValue === 'mod09Btn') {
+  if (modBtnValue === 'mod03Btn') {
+    modValue = 2.83802;
+  }  else if (modBtnValue === 'mod09Btn') {
     modValue = 8.51405;
   } else if (modBtnValue === 'mod27Btn') {
     modValue = 27.84469;
@@ -85,6 +89,7 @@ function sgAllocate() {
   console.log(volumeAdds)
 
   totalSpaceNew = (spaceFreeGB + spaceUsedGB) + (volumeAdds * modValue)
+  newTotalSpaceGBel.innerText = totalSpaceNew.toFixed(3)
   totalFreeSpaceNew = totalSpaceNew - spaceUsedGB
   console.log(totalSpaceNew.toFixed(3))
   percentFreeNew = (totalFreeSpaceNew / totalSpaceNew) * 100
@@ -125,6 +130,7 @@ function sgDetails() {
 
 /*------ event listeners ------*/
 //document.getElementById('mod09Btn').addEventListener('click', setModType);
+mod03Btn.addEventListener('click', sgAllocate);  
 mod09Btn.addEventListener('click', sgAllocate);  
 mod27Btn.addEventListener('click', sgAllocate);  
 mod54Btn.addEventListener('click', sgAllocate);  

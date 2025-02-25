@@ -46,15 +46,10 @@ a.mod:active {
   margin-bottom: 20px;
 }
 
-header h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h2, h3 {
+h1, h2, h3 {
   text-align: center; /* Center the text inside the heading */
   margin-bottom: 20px; /* Add some space below the heading */
-  font-size: 24px; /* Adjust size for better visibility */
+
 }
 
 section {
@@ -124,7 +119,7 @@ button.mod:active {
 }
 
 @media screen and (max-height: 900px) {
-  * {
+  *, h1, h2, h3 {
     font-size: 96%;
     button.mod {
       padding: 8px 16px;

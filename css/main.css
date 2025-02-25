@@ -84,10 +84,8 @@ a.mod:active {
 }
 
 /* Responsive adjustments */
-@media (max-width: 600px) {
-  main {
-    width: 90%;
-    max-width: 300px;
-    height: auto;
+@media (max-width: 800px) {
+  * {
+    font-size: 96%;
   }
 }
