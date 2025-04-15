@@ -3,7 +3,7 @@ const mod03 = 2.83802
 const mod09 = 8.51405
 const mod27 = 27.84469
 const mod54 = 55.68928
-const gbSize = 1024
+
 
 /*------ cached element references ------*/
 const modBoxel = document.getElementById('modBox')
@@ -23,6 +23,8 @@ const spaceFreeCYLNewel = document.getElementById('spaceFreeCYLNew')
 const spaceUsedCYLNewel = document.getElementById('spaceUsedCYLNew')
 const totalSpaceCYLNewel = document.getElementById('totalSpaceCYLNew')
 const newTotalSpaceGBel = document.getElementById('totalSpaceGBNew')
+const GBbtnel = document.getElementById('GBbtn');
+const GiBbtnel = document.getElementById('GiBbtn');
 
 
 /*--------- app's state (variables) ---------*/
@@ -46,7 +48,7 @@ let percentUsed
 let spaceFreeCYLNew
 let spaceUsedCYLNew
 let totalSpaceCYLNew
-
+let gbSize = 1024; // default GB
 
 
 /*--------- functions ---------*/
@@ -98,9 +100,9 @@ function sgAllocate() {
   percentUsedNewel.innerText = (100 - percentFreeNew).toFixed(2) + '%'
   totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYLNew = totalFreeSpaceNew * 1176
+  spaceFreeCYLNew = totalFreeSpaceNew * 1024 * 1024 / 960
   spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYLNew = spaceUsedGB * 1176
+  spaceUsedCYLNew = spaceUsedGB * 1024 * 1024 / 960
   spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYLNew = spaceFreeCYLNew + spaceUsedCYLNew
   totalSpaceCYLNewel.innerText = totalSpaceCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -118,14 +120,15 @@ function sgDetails() {
   percentUsedel.innerText= percentUsed.toFixed(2) + '%'
   spaceFreeGB = freeSpace / gbSize
   spaceFreeGBel.innerText= spaceFreeGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYL = spaceFreeGB * 1176
+  spaceFreeCYL = spaceFreeGB * 1024 * 1024 / 960
   spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedGB = (totalSpace - freeSpace) / gbSize
   spaceUsedGBel.innerText= spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYL = spaceUsedGB * 1176
+  spaceUsedCYL = spaceUsedGB * 1024 * 1024 / 960
   spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYL = spaceFreeCYL + spaceUsedCYL
   totalSpaceCYLel.innerText= totalSpaceCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+  sgAllocate() // Call sgAllocate to update the new values based on the current inputs
 }
 
 
@@ -138,3 +141,11 @@ mod54Btn.addEventListener('click', sgAllocate);
 document.querySelector('#totalSpace').addEventListener('input', sgDetails)
 document.querySelector('#freeSpace').addEventListener('input', sgDetails)
 document.querySelector('#volumeAdds').addEventListener('input', sgAllocate)
+GBbtnel.addEventListener('click', function () {
+  gbSize = 1024;
+  sgDetails();  // re-run calc to reflect change
+});
+GiBbtnel.addEventListener('click', function () {
+  gbSize = 1000;
+  sgDetails();  // re-run calc to reflect change
+});
