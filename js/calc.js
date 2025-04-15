@@ -100,9 +100,9 @@ function sgAllocate() {
   percentUsedNewel.innerText = (100 - percentFreeNew).toFixed(2) + '%'
   totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYLNew = totalFreeSpaceNew * 1024 * 1024 / 960 //conversion to CYL
+  spaceFreeCYLNew = totalFreeSpaceNew * 1176
   spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYLNew = spaceUsedGB * 1024 * 1024 / 960
+  spaceUsedCYLNew = spaceUsedGB * 1176
   spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYLNew = spaceFreeCYLNew + spaceUsedCYLNew
   totalSpaceCYLNewel.innerText = totalSpaceCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -120,11 +120,11 @@ function sgDetails() {
   percentUsedel.innerText= percentUsed.toFixed(2) + '%'
   spaceFreeGB = freeSpace / gbSize
   spaceFreeGBel.innerText= spaceFreeGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYL = spaceFreeGB * 1024 * 1024 / 960
+  spaceFreeCYL = spaceFreeGB * 1176
   spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedGB = (totalSpace - freeSpace) / gbSize
   spaceUsedGBel.innerText= spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYL = spaceUsedGB * 1024 * 1024 / 960
+  spaceUsedCYL = spaceUsedGB * 1176
   spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYL = spaceFreeCYL + spaceUsedCYL
   totalSpaceCYLel.innerText= totalSpaceCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
