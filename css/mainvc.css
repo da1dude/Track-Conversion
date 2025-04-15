@@ -118,9 +118,23 @@ button.mod:active {
   flex-wrap: wrap;
 }
 
-@media screen and (max-height: 900px) {
+@media screen and (max-height: 1000px) {
   *, h1, h2, h3 {
     font-size: 96%;
+    button.mod {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+    a.mod {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+} 
+
+@media screen and (max-height: 800px) {
+  *, h1, h2, h3 {
+    font-size: 94%;
     button.mod {
       padding: 8px 16px;
       font-size: 14px;

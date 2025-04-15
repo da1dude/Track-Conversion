@@ -49,6 +49,7 @@ let spaceFreeCYLNew
 let spaceUsedCYLNew
 let totalSpaceCYLNew
 let gbSize = 1024; // default GB
+let GiGorGBtoCLY = 1176
 
 
 /*--------- functions ---------*/
@@ -57,6 +58,7 @@ let gbSize = 1024; // default GB
 function init() {
   modValue = 'Choose a Mod Type'
   updateModtype()
+
 }
 init()
 
@@ -100,9 +102,9 @@ function sgAllocate() {
   percentUsedNewel.innerText = (100 - percentFreeNew).toFixed(2) + '%'
   totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYLNew = totalFreeSpaceNew * 1176
+  spaceFreeCYLNew = totalFreeSpaceNew * GiGorGBtoCLY
   spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYLNew = spaceUsedGB * 1176
+  spaceUsedCYLNew = spaceUsedGB * GiGorGBtoCLY
   spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYLNew = spaceFreeCYLNew + spaceUsedCYLNew
   totalSpaceCYLNewel.innerText = totalSpaceCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -120,11 +122,11 @@ function sgDetails() {
   percentUsedel.innerText= percentUsed.toFixed(2) + '%'
   spaceFreeGB = freeSpace / gbSize
   spaceFreeGBel.innerText= spaceFreeGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYL = spaceFreeGB * 1176
+  spaceFreeCYL = spaceFreeGB * GiGorGBtoCLY
   spaceFreeCYLel.innerText= spaceFreeCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedGB = (totalSpace - freeSpace) / gbSize
   spaceUsedGBel.innerText= spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceUsedCYL = spaceUsedGB * 1176
+  spaceUsedCYL = spaceUsedGB * GiGorGBtoCLY
   spaceUsedCYLel.innerText= spaceUsedCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalSpaceCYL = spaceFreeCYL + spaceUsedCYL
   totalSpaceCYLel.innerText= totalSpaceCYL.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -143,9 +145,11 @@ document.querySelector('#freeSpace').addEventListener('input', sgDetails)
 document.querySelector('#volumeAdds').addEventListener('input', sgAllocate)
 GBbtnel.addEventListener('click', function () {
   gbSize = 1024;
+  GiGorGBtoCLY = 1263;
   sgDetails();  // re-run calc to reflect change
 });
 GiBbtnel.addEventListener('click', function () {
   gbSize = 1000;
+  GiGorGBtoCLY = 1176;
   sgDetails();  // re-run calc to reflect change
 });
