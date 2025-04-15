@@ -100,7 +100,7 @@ function sgAllocate() {
   percentUsedNewel.innerText = (100 - percentFreeNew).toFixed(2) + '%'
   totalFreeSpaceNewel.innerText = totalFreeSpaceNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   totalUsedSpaceNewel.innerText = spaceUsedGB.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-  spaceFreeCYLNew = totalFreeSpaceNew * 1024 * 1024 / 960
+  spaceFreeCYLNew = totalFreeSpaceNew * 1024 * 1024 / 960 //conversion to CYL
   spaceFreeCYLNewel.innerText = spaceFreeCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
   spaceUsedCYLNew = spaceUsedGB * 1024 * 1024 / 960
   spaceUsedCYLNewel.innerText = spaceUsedCYLNew.toFixed(3).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
